@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Legendary Box of Battles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>The Legendary Box of Battles</h1>
+
+    <div class="container">
+        <!-- Battle Generator Box -->
+        <div class="box" id="battleBox">
+            <p>Click the box to reveal a battle!</p>
+        </div>
+
+        <!-- Battle Result Display -->
+        <div class="battle-result" id="battleResult" style="display: none;">
+            <!-- Battle details will be displayed here -->
+        </div>
+
+        <!-- Display Characters Button -->
+        <button id="displayCharactersButton" class="button">Display Characters</button>
+
+        <!-- Characters List -->
+        <div id="charactersList" class="characters-list" style="display: none;">
+            <!-- Character list will be populated here -->
+        </div>
+
+        <!-- Options Box -->
+        <div class="options-box">
+            <h2>Options</h2>
+
+            <!-- Fight Type Option -->
+            <div class="option-group">
+                <label for="fightType">Fight Type:</label>
+                <select id="fightType">
+                    <option value="single">Single Battle</option>
+                    <option value="team">Team Battle</option>
+                    <option value="dp">DP Battle</option>
+                </select>
+                <span class="tooltip">?
+                    <span class="tooltiptext">Select the type of battle.</span>
+                </span>
+            </div>
+
+            <!-- DP Restriction Option (Only for Single Battle) -->
+            <div id="dpRestrictionOption" class="option-group">
+                <label for="dpRestriction">DP Restriction:</label>
+                <select id="dpRestriction">
+                    <option value="random">Random</option>
+                    <option value="exact">Exact</option>
+                    <option value="range">Range</option>
+                </select>
+                <span class="tooltip">?
+                    <span class="tooltiptext">
+                        <strong>Random:</strong> No DP restrictions.<br>
+                        <strong>Exact:</strong> Select characters with an exact DP value.<br>
+                        <strong>Range:</strong> Select characters within a DP range.
+                    </span>
+                </span>
+            </div>
+
+            <!-- Exact DP Value Selection -->
+            <div id="exactOptions" class="option-group" style="display: none;">
+                <label for="dpExactValue">DP Value:</label>
+                <select id="dpExactValue">
+                    <!-- Options 1-10 will be populated via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Range DP Options -->
+            <div id="rangeOptions" class="option-group" style="display: none;">
+                <label for="dpLevel">DP Level:</label>
+                <select id="dpLevel">
+                    <!-- Options 1-10 will be populated via JavaScript -->
+                </select>
+
+                <label for="dpRange">Range:</label>
+                <select id="dpRange">
+                    <!-- Options 0-10 will be populated via JavaScript -->
+                </select>
+
+                <label for="dpDirection">Direction:</label>
+                <select id="dpDirection">
+                    <option value="plus">Plus</option>
+                    <option value="minus">Minus</option>
+                    <option value="plusminus" selected>Plus/Minus</option>
+                </select>
+            </div>
+
+            <!-- Team DP Value Option (Only for Team Battle and DP Battle) -->
+            <div id="teamDPValueOption" class="option-group" style="display: none;">
+                <label for="teamDPValueType">Team DP Value:</label>
+                <select id="teamDPValueType">
+                    <option value="random">Random</option>
+                    <option value="exact">Exact</option>
+                    <option value="range">Range</option>
+                </select>
+                <span class="tooltip">?
+                    <span class="tooltiptext">Set the team's total DP value.</span>
+                </span>
+            </div>
+
+            <!-- Exact Team DP Value Selection -->
+            <div id="teamExactDPOption" class="option-group" style="display: none;">
+                <label for="teamExactDPValue">DP Value:</label>
+                <select id="teamExactDPValue">
+                    <!-- Options will be populated via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Range Team DP Options -->
+            <div id="teamRangeDPOption" class="option-group" style="display: none;">
+                <label for="teamMinDPValue">Min DP:</label>
+                <select id="teamMinDPValue">
+                    <!-- Options will be populated via JavaScript -->
+                </select>
+
+                <label for="teamMaxDPValue">Max DP:</label>
+                <select id="teamMaxDPValue">
+                    <!-- Options will be populated via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Mirror Matches Option (Default On) -->
+            <div class="option-group">
+                <input type="checkbox" id="mirrorMatches" checked>
+                <label for="mirrorMatches">Allow Mirror Matches</label>
+                <span class="tooltip">?
+                    <span class="tooltiptext">Toggle whether the same character can appear on both teams.</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
